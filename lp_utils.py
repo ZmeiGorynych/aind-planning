@@ -17,6 +17,14 @@ class FluentState():
     def pos_sentence(self):
         return expr(conjunctive_sentence(self.pos, []))
 
+    def __str__(self):
+        my_str = 'Pos: '
+        for p in self.pos:
+            my_str += str(p)
+        my_str += '\nNeg: '
+        for p in self.neg:
+            my_str += str(p)
+        return my_str
 
 def conjunctive_sentence(pos_list, neg_list):
     """ returns expr conjuntive sentence given positive and negative fluent lists
